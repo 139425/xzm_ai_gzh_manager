@@ -1,0 +1,70 @@
+# spring.application.name=xzm_ai_gzh_manager
+server:
+  address: 0.0.0.0
+  port: 8102
+  servlet:
+    context-path: /api
+    # cookie 30 ???
+    session:
+      cookie:
+        max-age: 2592000
+
+spring:
+  application:
+    name: xzm_ai_gzh_manage_backend
+  # ?? local ??
+  profiles:
+    active: local
+  # session ??
+  session:
+    timeout: 2592000
+  # ?????
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/wx_mp_manage
+    username: root
+    password: 123456
+
+  # Redis ??
+  data:
+    redis:
+      database: 1
+      host: localhost
+      port: 6379
+      timeout: 5000
+
+  # ????
+  servlet:
+    multipart:
+      # ????
+      max-file-size: 10MB
+  jackson:
+    time-zone: Asia/Shanghai
+
+  ai:
+    openai:
+      api-key: your apiKey
+      base-url: https://api.deepseek.com
+      chat:
+        options:
+          model: deepseek-chat
+
+  rabbitmq:
+    host: localhost
+    username: admin
+    password: admin
+
+
+
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: false
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      logic-delete-field: isDelete # ????????????
+      logic-delete-value: 1 # ?????????? 1?
+      logic-not-delete-value: 0 # ?????????? 0?
+
+springdoc:
+  override-with-generic-response: false

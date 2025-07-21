@@ -2,20 +2,20 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="generator.mapper.WxAccountMapper">
+<mapper namespace="com.xzm.xzm_ai_gzh_manager.mapper.WxAccountMapper">
 
-    <resultMap id="BaseResultMap" type="generator.domain.WxAccount">
+    <resultMap id="BaseResultMap" type="com.xzm.xzm_ai_gzh_manager.model.entity.WxAccount">
             <id property="id" column="id" jdbcType="BIGINT"/>
-            <result property="appid" column="appId" jdbcType="CHAR"/>
+            <result property="appId" column="appId" jdbcType="CHAR"/>
             <result property="name" column="name" jdbcType="VARCHAR"/>
             <result property="verified" column="verified" jdbcType="BIT"/>
             <result property="secret" column="secret" jdbcType="CHAR"/>
             <result property="token" column="token" jdbcType="VARCHAR"/>
-            <result property="aeskey" column="aesKey" jdbcType="VARCHAR"/>
-            <result property="userid" column="userId" jdbcType="BIGINT"/>
-            <result property="createtime" column="createTime" jdbcType="TIMESTAMP"/>
-            <result property="updatetime" column="updateTime" jdbcType="TIMESTAMP"/>
-            <result property="isdelete" column="isDelete" jdbcType="TINYINT"/>
+            <result property="aesKey" column="aesKey" jdbcType="VARCHAR"/>
+            <result property="userId" column="userId" jdbcType="BIGINT"/>
+            <result property="createTime" column="createTime" jdbcType="TIMESTAMP"/>
+            <result property="updateTime" column="updateTime" jdbcType="TIMESTAMP"/>
+            <result property="isDelete" column="isDelete" jdbcType="TINYINT"/>
     </resultMap>
 
     <sql id="Base_Column_List">

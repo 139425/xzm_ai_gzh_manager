@@ -1,7 +1,8 @@
 package com.xzm.xzm_ai_gzh_manager.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import generator.domain.WxAccount;
+import com.xzm.xzm_ai_gzh_manager.model.entity.WxAccount;
+import org.apache.ibatis.annotations.Mapper;
 
 
 /**
@@ -10,6 +11,7 @@ import generator.domain.WxAccount;
 * @createDate 2025-07-18 21:12:21
 * @Entity generator.domain.WxAccount
 */
+@Mapper
 public interface WxAccountMapper extends BaseMapper<WxAccount> {
 
 
