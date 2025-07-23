@@ -8,5 +8,8 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode(callSuper = true)
 @Data
 public class WxMaterialQueryRequest extends PageRequest {
+    /**
+     * 素材类型: image, voice, video, news
+     */
     private String materialType;
 }
