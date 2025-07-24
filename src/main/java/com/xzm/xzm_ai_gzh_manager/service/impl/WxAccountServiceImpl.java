@@ -64,17 +64,17 @@ implements WxAccountService {
      * @param wxAccount 公众号信息
      */
     private synchronized void addAccountToRuntime(WxAccount wxAccount){
-        String appid = wxAccount.getAppId();
-        WxMpDefaultConfigImpl config =wxAccount.toWxMpConfigStorage();
-        try{
-            wxMpService.addConfigStorage(appid,config);
-        }catch (NullPointerException  e){
-            // 当 wxMpService 最开始没有公众号配置时可能会出现空指针异常
-            log("初始化configStorageMap...");
-            Map<String, WxMpConfigStorage> configStorages = new HashMap<>(6);
-            configStorages.put(appid, config);
-            wxMpService.setMultiConfigStorages(configStorages, appid);
-        }
+//        String appid = wxAccount.getAppId();
+//        WxMpDefaultConfigImpl config =wxAccount.toWxMpConfigStorage();
+//        try{
+//            wxMpService.addConfigStorage(appid,config);
+//        }catch (NullPointerException  e){
+//            // 当 wxMpService 最开始没有公众号配置时可能会出现空指针异常
+//            log("初始化configStorageMap...");
+//            Map<String, WxMpConfigStorage> configStorages = new HashMap<>(6);
+//            configStorages.put(appid, config);
+//            wxMpService.setMultiConfigStorages(configStorages, appid);
+//        }
     }
     private boolean isAccountInRuntime(String appid){
         try{
@@ -122,7 +122,7 @@ implements WxAccountService {
 
     public Boolean deleteByAppids (List<String> appids){
         //先删除Wxjava里的数据
-        appids.forEach(wxMpService::removeConfigStorage);
+     //   appids.forEach(wxMpService::removeConfigStorage);
         //再删除数据库里的数据
 
         return this.remove(Wrappers.lambdaQuery(WxAccount.class)
